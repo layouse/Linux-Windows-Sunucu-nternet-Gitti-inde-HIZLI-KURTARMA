@@ -37,21 +37,11 @@ echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
 INTERFACE → "Ethernet" veya "Wi-Fi"
 HEDEF_IP → boş IP (örn: 192.168.1.50)
 -------------------------------------
-:: 1. Reset (DHCP'e dön)
+```bash
 netsh interface ip set address name="<INTERFACE>" dhcp
 netsh interface ip set dns name="<INTERFACE>" dhcp
-
-:: 2. Statik IP ata
 netsh interface ip set address name="<INTERFACE>" static 192.168.1.<HEDEF_IP> 255.255.255.0 192.168.1.1
-
-:: 3. DNS ata
 netsh interface ip set dns name="<INTERFACE>" static 8.8.8.8
 netsh interface ip add dns name="<INTERFACE>" 1.1.1.1 index=2
-
-:: 4. Cache temizle
 ipconfig /flushdns
-
-:: 5. Test
-ping 192.168.1.1
-ping 8.8.8.8
-ping google.com
+```
