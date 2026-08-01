@@ -34,8 +34,8 @@ echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
 ```
 🪟 ⚡ 2. ACİL AĞ KURTARMA (WINDOWS - STATIK IP)
 
-<INTERFACE> → "Ethernet" veya "Wi-Fi"
-<HEDEF_IP> → boş IP (örn: 192.168.1.50)
+INTERFACE → "Ethernet" veya "Wi-Fi"
+HEDEF_IP → boş IP (örn: 192.168.1.50)
 -------------------------------------
 :: 1. Reset (DHCP'e dön)
 netsh interface ip set address name="<INTERFACE>" dhcp
